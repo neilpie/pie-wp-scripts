@@ -1,0 +1,8 @@
+#!/bin/bash
+#This script should sit in the user directory, on eabove the project directories
+
+
+read -p "Which project would you like to deploy?: "
+project=$REPLY
+
+
