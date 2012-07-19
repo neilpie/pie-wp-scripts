@@ -1,0 +1,5 @@
+*.swp
+*.swo
+.DS_Store
+/conf/*
+!/conf/project_config.sample.sh
