@@ -6,8 +6,7 @@ source $MYDIR/conf/$project_name.sh
 
 source $MYDIR/modules/single_check.sh
 
-source_dir=staging
-destination_dir=production.$timestamp
+source $MYDIR/modules/staging_to_production_setup.sh
 
 source $MYDIR/modules/full_files_migration.sh
 source $MYDIR/modules/update_public_symlink.sh
