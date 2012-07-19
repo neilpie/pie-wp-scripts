@@ -7,4 +7,4 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 echo "Copying $source_dir files to $project_dir/$destination_dir"
-rsync -rv --exclude=.git --exclude="wp-set-environment.php" $project_dir/$source_dir/* $project_dir/$destination_dir
+rsync -rL --exclude="README.md" --exclude="wp-set-environment.php" --exclude="dbsearch.php" $project_dir/$source_dir/* $project_dir/$destination_dir
