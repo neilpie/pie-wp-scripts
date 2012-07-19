@@ -9,8 +9,9 @@ source $MYDIR/modules/single_check.sh
 source $MYDIR/modules/staging_to_production_setup.sh
 
 source $MYDIR/modules/full_files_migration.sh
+source $MYDIR/modules/set_permissions.sh
+
 source $MYDIR/modules/update_public_symlink.sh
 
-source $MYDIR/modules/set_permissions.sh
 
 echo "Done"

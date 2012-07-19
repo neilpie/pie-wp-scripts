@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "Copying uploads..."
-cp -R $project_dir/$source_dir/content/uploads $project_dir/$destination_dir/content/uploads
+cp -R $source_dir/content/uploads/* $destination_dir/content/uploads

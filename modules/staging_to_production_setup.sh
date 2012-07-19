@@ -9,5 +9,5 @@ destination_db_name=$production_db_name
 source_db_user=$staging_db_user
 destination_db_user=$production_db_user
 
-source_dir=staging
-destination_dir=production.$timestamp
+source_dir=$project_dir/staging
+destination_dir=$project_dir/production.$project_name.$timestamp

@@ -9,5 +9,5 @@ destination_db_name=$staging_db_name
 source_db_user=$production_db_user
 destination_db_user=$staging_db_user
 
-source_dir=public
-destination_dir=staging
+source_dir=$home_dir/$project_name
+destination_dir=$project_dir/staging
