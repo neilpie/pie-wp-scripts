@@ -13,7 +13,7 @@ source $MYDIR/modules/single_check.sh
 echo "loading $MYDIR/modules/staging_to_production.sh"
 source $MYDIR/modules/staging_to_production_setup.sh
 
-echo "loading $MYDIR/modules/full_file_migration.sh"
+echo "loading $MYDIR/modules/full_files_migration.sh"
 source $MYDIR/modules/full_files_migration.sh
 echo "loading $MYDIR/modules/set_permissions.sh"
 source $MYDIR/modules/set_permissions.sh
