@@ -1,13 +1,28 @@
 #!/bin/bash
 
-echo "WARNING: You are about to copy all $source_dir files to $destination_dir"
+echo "WARNING: You are about to copy all $source_dir files to $destination_dir (exp)"
 read -p "Are you sure you want to continue? [y/N]" -n 1
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
 	exit 1
 fi
 echo " "
 echo "Copying $source_dir files to $destination_dir"
-rsync -rL  --exclude="README.md" --exclude="wp-set-environment.php" --exclude="dbsearch.php" $source_dir/{*,.htaccess} $destination_dir
+
+PLUGINS=$(mysql -u$master_db_user -p $staging_db_name -sN -e "SELECT option_value FROM "$db_prefix"options WHERE option_name='active_plugins'")
+
+TEXT=$(php -r " foreach(unserialize('"$PLUGINS"') as \$plugin) echo substr(\$plugin,0,strpos(\$plugin,'/')).' ';")
+declare -a ARRAY=($TEXT)
+rm -f $project_dir/tmp/includes.txt
+touch $project_dir/tmp/includes.txt
+for i in "${ARRAY[@]}"
+do
+   :   
+   # do whatever on $i
+
+echo "content/plugins/$i/" >> $project_dir/tmp/includes.txt
+done
+
+rsync -rLv  --include-from=$project_dir/tmp/includes.txt --exclude="core/.git" --exclude="README.md" --exclude="wp-set-environment.php" --exclude="dbsearch.php" --exclude="content/plugins/*"  $source_dir/{*,.htaccess} $destination_dir
 
 echo "Removing old files"
 rm -fRv $project_dir/tmp/*
