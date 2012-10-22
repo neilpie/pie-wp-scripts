@@ -7,7 +7,7 @@ echo "loading $MYDIR/conf/$project_name.sh"
 source $MYDIR/conf/$project_name.sh
 
 
-echo "loading $MYDIR/modules/production_to_staging_setup.sh"
+echo "loading $MYDIR/modules/staging_to_production_setup.sh"
 source $MYDIR/modules/staging_to_production_setup.sh
 
 echo "loading $MYDIR/modules/data_migration.sh"
