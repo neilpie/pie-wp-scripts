@@ -1,5 +1,7 @@
 *.swp
 *.swo
+*.sublime-project
+*.sublime-workspace
 .DS_Store
 /conf/*
 !/conf/project_config.sample.sh

@@ -6,11 +6,6 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
 	exit 1
 fi
 echo " "
-stty -echo
-read -p "Type the MySQL user password: "
-echo " "
-password=$REPLY
-
 source_dump=$project_dir/tmp/$source_db_name.$timestamp.sql
 destination_dump=$project_dir/tmp/$destination_db_name.$timestamp.sql
 stty echo

@@ -14,18 +14,13 @@ project_dir=$home_dir/wordpress-central
 staging_db_string=staging.domain
 production_db_string=live.domain
 master_db_user=wp_staging
+password=db_password
 
 #These are the file permissions settings for production & staging 
 writeable_owner=www-data
 secure_owner=root
 developer_group=client_name
-
 mysql_path=
-
-#for multiple subdirectory installs (NOT multisite)
-#db_prefix=string_
-#installations=("array" "of" "subdirs")
-#single_or_multi=multi
 
 #for single & multisite installs 
 staging_db_name=project_name_staging
