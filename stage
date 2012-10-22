@@ -15,5 +15,6 @@ source $MYDIR/modules/data_migration.sh
 
 echo "loading $MYDIR/modules/user_generated_migration.sh"
 source $MYDIR/modules/user_generated_migration.sh
-
+echo "loading $MYDIR/modules/set_permissions.sh"
+source $MYDIR/modules/set_permissions.sh
 echo "Done"
