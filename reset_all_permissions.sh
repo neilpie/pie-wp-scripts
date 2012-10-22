@@ -13,4 +13,4 @@ chown -R $writeable_owner $project_dir/{staging,production.*/content/uploads,pro
 
 find $project_dir -type d -exec chmod 775 {} \;
 find $project_dir -type f -exec chmod 664 {} \;
-find $project_dir/pie-wp-scripts -type f -exec chmod 770 {} \;
+find $project_dir/scripts -type f -exec chmod 770 {} \;
