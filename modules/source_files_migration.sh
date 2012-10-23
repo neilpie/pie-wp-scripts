@@ -5,6 +5,12 @@ read -p "Are you sure you want to continue? [y/N]" -n 1
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
 	exit 1
 fi
+
+echo " "
+echo "Copying $project_dir/$project_name to $destination_dir"
+cp -R $project_dir/$project_name $destination_dir
+rm -fR $destination_dir/{content/themes/*,content/plugins/*}
+
 echo " "
 echo "Copying $source_dir files to $destination_dir"
 
@@ -26,4 +32,4 @@ do
 echo "content/plugins/$i/" >> $project_dir/tmp/includes.txt
 done
 
-rsync -rLv  --include-from=$project_dir/tmp/includes.txt --exclude="core/.git" --exclude="content/themes/*" --exclude="README.md" 	--exclude="wp-set-environment.php" --exclude="dbsearch.php" --exclude="content/plugins/*" 	--exclude="content/w3-total-cache-config.php" --exclude="content/w3tc/*"	$source_dir/{*,.htaccess} $destination_dir
+rsync -rLv  --include-from=$project_dir/tmp/includes.txt --exclude="core/.git" --exclude="content/themes/*" --exclude="README.md" 	--exclude="wp-set-environment.php" --exclude="dbsearch.php" --exclude="content/plugins/*" 	--exclude="content/w3-total-cache-config.php" --exclude="content/w3tc/*"	$source_dir/* $destination_dir
