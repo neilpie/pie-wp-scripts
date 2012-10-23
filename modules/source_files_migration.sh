@@ -32,4 +32,4 @@ do
 echo "content/plugins/$i/" >> $project_dir/tmp/includes.txt
 done
 
-rsync -rLv  --include-from=$project_dir/tmp/includes.txt --exclude="core/.git" --exclude="content/themes/*" --exclude="README.md" 	--exclude="wp-set-environment.php" --exclude="dbsearch.php" --exclude="content/plugins/*" 	--exclude="content/w3-total-cache-config.php" --exclude="content/w3tc/*"	$source_dir/* $destination_dir
+rsync -rLv  --include-from=$project_dir/tmp/includes.txt --exclude="core/.git" --exclude="content/themes/*" --exclude="README.md" 	--exclude="wp-set-environment.php" --exclude="dbsearch.php" --exclude="content/plugins/*" 	--exclude="content/w3-total-cache-config.php" --exclude="content/w3tc/*" --exclude="content/uploads/*" --exclude="content/upgrade/*" $source_dir/* $destination_dir
