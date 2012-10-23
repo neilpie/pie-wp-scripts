@@ -12,7 +12,7 @@ source $MYDIR/conf/$project_name.sh
 echo "loading $MYDIR/modules/staging_to_production.sh"
 source $MYDIR/modules/staging_to_production_setup.sh
 
-echo "loading $MYDIR/modules/full_files_migration.sh"
+echo "loading $MYDIR/modules/source_files_migration.sh"
 source $MYDIR/modules/source_files_migration.sh
 
 echo "loading $MYDIR/modules/set_permissions.sh"

@@ -7,8 +7,8 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 echo " "
-echo "Copying $project_dir/$project_name to $destination_dir"
-cp -R $project_dir/$project_name $destination_dir
+echo "Copying $home_dir/$project_name to $destination_dir"
+cp -R $home_dir/$project_name $destination_dir
 rm -fR $destination_dir/{content/themes/*,content/plugins/*}
 
 echo " "
@@ -23,6 +23,7 @@ declare -a ARRAY=($TEXT)
 rm -f $project_dir/tmp/includes.txt
 touch $project_dir/tmp/includes.txt
 echo "content/themes/$TEMPLATE/" >> $project_dir/tmp/includes.txt
+
 echo "content/themes/$STYLESHEET/" >> $project_dir/tmp/includes.txt
 for i in "${ARRAY[@]}"
 do
