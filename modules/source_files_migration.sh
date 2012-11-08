@@ -8,7 +8,7 @@ fi
 
 echo " "
 echo "Copying $home_dir/$project_name to $destination_dir"
-cp -R $home_dir/$project_name $destination_dir
+cp -RL $home_dir/$project_name $destination_dir
 rm -fR $destination_dir/{content/themes/*,content/plugins/*}
 
 echo " "

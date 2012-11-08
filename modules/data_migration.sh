@@ -18,3 +18,6 @@ echo "Running import"
 
 sed -i  "s/$find_str/$replace_str/g" $source_dump
 ${mysql_path}mysql -u $master_db_user -p$password $destination_db_name < $source_dump
+
+cp $destination_dump $project_dir/staging/latest.$project_name.sql
+sed -i  "s/$replace_str/$development_db_string/g" $project_dir/staging/latest.$project_name.sql
