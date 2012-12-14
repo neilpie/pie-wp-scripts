@@ -1,5 +1,5 @@
 #!/bin/bash
-if !$auto
+if [[ $auto = "false" ]]; then
 	echo "updating all production file permissions"
 fi
 chown -R $secure_owner:$developer_group $project_dir/production.$project_name.$timestamp

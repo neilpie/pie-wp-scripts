@@ -1,5 +1,5 @@
 #!/bin/bash
-if !$auto
+if [[ $auto = "false" ]]; then
 	echo "WARNING: You are about to copy user generated files from $source_dir to $destination_dir"
 	read -p "Are you sure you want to continue? [y/N]" -n 1
 	if [[ ! $REPLY =~ ^[Yy]$ ]]; then
@@ -16,6 +16,6 @@ rm -f $destination_dir/content/w3-total-cache-config.php
 rsync -rLv  $source_dir/content/uploads $destination_dir/content/
 cp $source_dir/content/w3-total-cache-config.php $destination_dir/content
 cp $source_dir/.htaccess $destination_dir/
-if !$auto
+if [[ $auto = "false" ]]; then
 	echo "Done"
 fi

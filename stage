@@ -1,5 +1,5 @@
 #!/bin/bash
-
+auto="false"
 MYDIR=`dirname $0`
 echo "loading $MYDIR/modules/get_project_name.sh"
 source $MYDIR/modules/get_project_name.sh
