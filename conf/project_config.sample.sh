@@ -25,4 +25,4 @@ mysql_path=
 #for single & multisite installs 
 staging_db_name=project_name_staging
 production_db_name=project_name_production
-dn_prefix=wp_
+db_prefix=wp_
